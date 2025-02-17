@@ -26,7 +26,7 @@ function Weather() {
   };
 
   return (
-    <div className="flex-col justify-center text-center xs:w-1/2 mx-auto p-5">
+    <div className="flex-col justify-center text-center sm:w-1/2 mx-auto p-5">
       <p className="text-gray-400 mt-10 text-3xl font-bold font-mono border-b  pb-3">
         Simple Weather Application
       </p>
@@ -74,6 +74,7 @@ function Weather() {
             <p className="text-xl font-semibold">
               Humidity {cityData.main.humidity}%
             </p>
+            <p className="text-xl font-semibold">Description - {cityData.weather[0].description}</p>
           </div>
         </div>
       )}
