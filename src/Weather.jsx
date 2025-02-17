@@ -59,22 +59,26 @@ function Weather() {
             </p>
           </div>
           <div className="mt-10">
-            <p className="text-9xl font-serif">
-              {Math.trunc(cityData.main.temp)}&deg;
-            </p>
-            <p className="text-xl font-semibold">
-              {Math.trunc(cityData.main.feels_like) >= 15 &&
-              Math.trunc(cityData.main.feels_like) <= 20
-                ? "Cloudy"
-                : "Clear"}
-            </p>
-            <p className="text-xl font-semibold">
-              Feels like {Math.trunc(cityData.main.feels_like)}&deg;
-            </p>
-            <p className="text-xl font-semibold">
-              Humidity {cityData.main.humidity}%
-            </p>
-            <p className="text-xl font-semibold">Description - {cityData.weather[0].description}</p>
+            <div className="inline-flex relative">
+              <p className="text-9xl font-serif ">
+                {Math.trunc(cityData.main.temp)}&deg;
+              </p>
+              <img
+                src={`http://openweathermap.org/img/w/${cityData.weather[0].icon}.png`}
+                className="w-25"
+              />
+              <p className="absolute right-5 top-25 text-xl font-semibold">
+                {Math.trunc(cityData.main.temp) >= 15 &&
+                Math.trunc(cityData.main.temp) <= 20
+                  ? "Cloudy"
+                  : "Clear"}
+              </p>
+            </div>
+            <div className="text-xl font-semibold text-center mt-8">
+              <p>Feels like {Math.trunc(cityData.main.feels_like)}&deg;</p>
+              <p>Humidity {cityData.main.humidity}%</p>
+              <p>Description - {cityData.weather[0].description}</p>
+            </div>
           </div>
         </div>
       )}
